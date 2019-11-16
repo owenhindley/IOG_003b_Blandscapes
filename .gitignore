@@ -1,0 +1,117 @@
+# =============== #
+# Unity generated #
+# =============== #
+*[Tt]emp/
+*[Uu]nityGenerated/
+[Ll]ibrary/
+!*glitchlibrary/
+!*ExcelLibrary/
+*[Bb]uilds/
+*[Bb]uild/
+![Pp]rebuild/
+*[Bb]in/
+*[Tt]empBuild/
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+*.log
+.vs/
+ 
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# ============ #
+# Builds	   #
+# ============ #
+*.apk
+#*.exe
+*.app
+*.ipa
+
+# ============ #
+# Houdini	   #
+# ============ #
+*Houdini/backup/
+
+# keep .dll's for libraries
+
+!**/Assets/**/*.dll
+
+AudioPlugin_*
+dev/okgovr-prototypes/obj
+
+# vim
+*.sw*
+*.un~
+*~
+
+*.db
+*.opendb
+okgoaudio/Plugin/VisualStudio/x64/
+dev/okgovr-prototypes/.vscode/launch.json
+dev/okgovr-prototypes_CLONE/
+dev/speech/Cognitive-Speech-STT-Windows-master/
+
+!Icons/
+*.asd
+dev/audio/pd-guitar-chords/audio/New/New_Acoustic_Mutes_.wav
+dev/audio/pd-guitar-chords/audio/New/New_Acoustic_OneHits_.wav
+dev/audio/pd-guitar-chords/audio/New/New_Acoustic_Strums_.wav
+dev/okgovr-prototypes/Assets/FlipbookGames/
+tests/lovebird-tests/
+tests/lightmap-switching-tool-master/lightmap-switching-tool-master/.gitignore
+tests/lightmap-switching-tool-master/
+dev/bootstrap/lambchild-bootstrap/lambchild-bootstrap/obj/
+misc/Photon-OnPremise-Server-SDK_v4-0-29-11263/
+
+!dev/bootstrap/**/*.*
+dev/bootstrap/lambchild-bootstrap/lambchild-bootstrap/packages/
+dev/bootstrap/lambchild-bootstrap/lambchild-bootstrap/.vs
+dev/bootstrap/lambchild-bootstrap/lambchild-bootstrap/.vs/**/*.*
+dev/audio/OK Go Synths Combined/OK Go Synths Combined Project/Samples/
+dev/okgovr-prototypes/Assets/Plugins/GitHub/
+dev/okgovr-prototypes-multiplayer-symlink/
+Gluon/
+dev/okgovr-prototypes/Assets/_ThirdParty/APlus Assets Explorer/
+**/Ableton Project Info/*
+dev/audio/OK Go Synths Combined/OK Go Synths Reference/OK Go Bass and Keytar Reference Project/Desktop.ini
+dev/audio/OK Go Eletri6ity/OK Go Electri6ity Guitar Damian Project/
+dev/okgovr-prototypes/Assets/StreamingAssets/PerformanceTestRunInfo.json
+dev/okgovr-prototypes/Assets/Plugins/APlus Assets Explorer/
+dev/okgovr-prototypes-CLONE/
+dev/okgovr-prototypes/Assets/Resources/SongPresets/Names/
+dev/okgovr-prototypes/Assets/Resources/SongPresets/Names.meta
+tests/
+origin/dev-optimisation
+dev/okgovr-prototypes/Assets/StreamingAssets/TestResults.xml
+dev/okgovr-prototypes/Assets/StreamingAssets/PerformanceTestResults.json.meta
+dev/okgovr-prototypes/Assets/StreamingAssets/PerformanceTestResults.json
+dev/okgovr-prototypes/Assets/StreamingAssets/TestResults.xml.meta
+dev/okgovr-prototypes/Assets/StreamingAssets/PerformanceTestRunInfo.json.meta
+utils/workdays-calculator/node_modules/
+/baseline.xml
+/benchmarks
+/test-results
+/old-test-results
+utils/spike-checking/
+dev/speech/azure-cogserv-speech-2019/OKGOAzureCogservSpeech/packages/
+dev/speech/azure-cogserv-speech-2019/OKGOAzureCogservSpeech/OKGOAzureCogservSpeech/obj/
