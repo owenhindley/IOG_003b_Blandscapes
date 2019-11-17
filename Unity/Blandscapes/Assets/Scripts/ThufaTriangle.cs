@@ -22,6 +22,8 @@ public class ThufaTriangle : MonoBehaviour
     private Quaternion originalRotation;
     private Quaternion openRotation;
 
+    public Transform glowSphere;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,10 @@ public class ThufaTriangle : MonoBehaviour
             if (isOpenNow) { DoFlutter(); }
             isOpen = isOpenNow;
         }
+    }
+
+    public void SetMidpoint(Vector3 midpoint){
+        glowSphere.localPosition = midpoint;
     }
 
     public void DoFlutter(){

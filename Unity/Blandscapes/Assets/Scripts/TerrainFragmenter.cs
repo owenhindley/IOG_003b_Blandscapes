@@ -15,6 +15,7 @@ public class TerrainFragmenter : MonoBehaviour
 
     public float normalThreshold = 0.8f;
     public float separationDistance = 0.01f;
+    public float capHeight = 0.2f;
 
     [InspectorButton("GrabTriangles")] public bool DoGrabTriangles;
     [InspectorButton("DestroyTriangles")] public bool DoDestroyTriangles;
@@ -106,12 +107,47 @@ public class TerrainFragmenter : MonoBehaviour
 
                 extractedTriangles.Add(go);
 
+                var cap = new GameObject();
+                cap.name = "Cap"+extractedTriangles.Count;
+
+                cap.transform.parent = go.transform;
+                var capMf = cap.AddComponent<MeshFilter>();
+                var capMr = cap.AddComponent<MeshRenderer>();
+
+                capMf.mesh = CreateCapMesh(newMesh.vertices, newMesh.normals, newMesh.uv);
+                capMr.material = triangleMaterial;
+
+                cap.transform.localPosition = Vector3.zero;
+                cap.transform.localRotation = Quaternion.identity;
+                cap.transform.localScale = Vector3.one;
+
+                var tt = go.GetComponent<ThufaTriangle>();
+                tt.SetMidpoint(Vector3.Lerp(Vector3.Lerp(newMesh.vertices[0], newMesh.vertices[1], 0.5f), newMesh.vertices[2], 0.5f));
+
             }
 
             
 
         }
 
+    }
+
+    public Mesh CreateCapMesh(Vector3[] points, Vector3[] normals, Vector2[] uvs){
+        var capMesh = new Mesh();
+
+        var midVert = Vector3.Lerp(Vector3.Lerp(points[0], points[1], 0.5f), points[2], 0.5f);
+        var midUV = Vector2.Lerp(Vector2.Lerp(uvs[0], uvs[1], 0.5f), uvs[2], 0.5f);
+        var midNormal = Vector3.Lerp(Vector3.Lerp(normals[0], normals[1], 0.5f), normals[2], 0.5f);
+
+        midVert += normals[0] * capHeight;
+
+        capMesh.vertices = new Vector3[] { points[0], points[1], points[2], midVert };
+        capMesh.uv = new Vector2[] { uvs[0], uvs[1], uvs[2], midUV };
+        capMesh.normals = new Vector3[] { normals[0], normals[1], normals[2], midNormal};
+        capMesh.triangles = new int[] { 0,1,2, 0, 2, 1, 0,3,2, 2, 3, 1, 0, 1, 3};
+
+
+        return capMesh;
     }
 
     public void DestroyTriangles(){
